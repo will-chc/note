@@ -88,7 +88,8 @@ ul:after{
     @mixin fontDefault($size：16px,$color:#0000){
         font-size:$size;
         color:$color;
+        font-weight:1000;
     }
 
-    
+
 ```
