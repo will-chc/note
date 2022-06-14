@@ -1,0 +1,48 @@
+$color:#ffff;
+    .hello{
+        .son{
+                color: $color;
+                border: 1px solid $color;
+            }
+    }
+    body{
+        background-color: $color;
+    }
+
+    //嵌套选择器
+    body{
+        .input-box{
+            border: #{1+1}px solid red;
+        }
+    }
+    ul{
+        background-color:#ffff;
+        li{
+            color:#0000;
+        }
+        li>a{
+            font-size:16px;
+        }
+        //&在内部指向父选择器
+        //&=>ul
+        &:after{
+            display:block;
+            content:'';
+        }
+    }
+    /*声明mixin*/
+    @mixin border-radius{
+        color:skyblue;
+        border-radius:5px;  
+    }
+    //使用mixin
+    .div1{
+        @include border-radius;
+    }
+    @mixin fontDefault($size,$fontColor){
+        font-size: $size;
+        color:$fontColor;
+    }
+    .div2{
+        @include fontDefault(10px,purple)
+    }
